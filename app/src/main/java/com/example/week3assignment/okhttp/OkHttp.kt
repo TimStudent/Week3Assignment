@@ -30,6 +30,7 @@ object OkHttp {
     var trackPrice = 0.0
     var previewUrl = ""
     var primaryGenreName = ""
+    var pictureLink = ""
 
 
     fun requestURL(urlLink: String) {
@@ -89,7 +90,8 @@ object OkHttp {
                 artistName,
                 trackPrice,
                 previewUrl,
-                primaryGenreName
+                primaryGenreName,
+                pictureLink
             )
 
             mSongViewModel.addSong(song)

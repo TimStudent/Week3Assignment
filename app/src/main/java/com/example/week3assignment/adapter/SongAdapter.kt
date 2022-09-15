@@ -4,7 +4,11 @@ import android.media.AudioAttributes
 import android.media.MediaPlayer
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
+import coil.load
+import com.example.week3assignment.R
 import com.example.week3assignment.databinding.CardViewLayoutBinding
 import com.example.week3assignment.model.SongData
 
@@ -29,6 +33,7 @@ class SongAdapter(
     override fun getItemCount(): Int {
         return mList.size
     }
+
 }
 
 class ViewHolder(private val binding:CardViewLayoutBinding): RecyclerView.ViewHolder(binding.root){
@@ -36,8 +41,7 @@ class ViewHolder(private val binding:CardViewLayoutBinding): RecyclerView.ViewHo
         binding.SongTitle.text = song.trackName
         binding.SongArtist.text = song.artistName
         binding.SongPrice.text = song.trackPrice.toString()
-
-
+        binding.imageView.load(song.pictureLink)
         binding.GridLayout.setOnClickListener {
             val url = song.songPreview
             val mediaPlayer = MediaPlayer().apply {

@@ -1,5 +1,6 @@
 package com.example.week3assignment.view
 
+import android.content.ContentValues
 import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
@@ -37,8 +38,9 @@ class RockFragment : Fragment() {
     private var songName = "Story of My Life"
     private var songArtist = "One Direction"
     private var songPrice = 1.29
-    private var previewURL = "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/ce/32/81/ce32816e-b9e8-e9a8-94bf-40e4f99e3596/mzaf_2990346819158497013.plus.aac.p.m4a"
+    private var previewURL = ""
     private var songGenreName = "Rock"
+    private var pictureLink = "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a98cff5d-a612-49d8-a0db-175994384b20/dce3hw4-2f32764d-3222-4116-84a4-6ff82576b31d.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2E5OGNmZjVkLWE2MTItNDlkOC1hMGRiLTE3NTk5NDM4NGIyMFwvZGNlM2h3NC0yZjMyNzY0ZC0zMjIyLTQxMTYtODRhNC02ZmY4MjU3NmIzMWQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.NpLyS3jAEZtyhMyE1YKz6-DOZllTM6-12gFBeHpbQSk"
 
     //
     private var url = ""
@@ -94,6 +96,10 @@ class RockFragment : Fragment() {
                                     previewURL = jsonArray.getJSONObject(i).getString("previewUrl")
                                     Log.d(TAG, "$i $previewURL")
                                 }
+                                if (jsonArray.getJSONObject(i).has("artworkUrl100")) {
+                                    pictureLink = jsonArray.getJSONObject(i).getString("artworkUrl100")
+                                    Log.d(TAG, "$i $pictureLink")
+                                }
 
                                 val song = SongData(
                                     0,
@@ -101,7 +107,8 @@ class RockFragment : Fragment() {
                                     songArtist,
                                     songPrice,
                                     previewURL,
-                                    songGenreName
+                                    songGenreName,
+                                    pictureLink
                                 )
                                 mSongViewModel.addSong(song)
                             }

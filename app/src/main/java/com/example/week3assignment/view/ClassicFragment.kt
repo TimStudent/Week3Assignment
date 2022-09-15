@@ -37,6 +37,7 @@ class ClassicFragment : Fragment() {
     private var songPrice = 2.00
     private var previewURL = ""
     private var songGenreName = "Classic"
+    private var pictureLink = ""
 
     private var jsonString = ""
     private lateinit var mSongViewModel: SongViewModel
@@ -87,6 +88,10 @@ class ClassicFragment : Fragment() {
                                     previewURL = jsonArray.getJSONObject(i).getString("previewUrl")
                                     Log.d(ContentValues.TAG, "$i $previewURL")
                                 }
+                                if (jsonArray.getJSONObject(i).has("artworkUrl100")) {
+                                    pictureLink = jsonArray.getJSONObject(i).getString("artworkUrl100")
+                                    Log.d(ContentValues.TAG, "$i $pictureLink")
+                                }
 
                                 val song = SongData(
                                     0,
@@ -94,7 +99,8 @@ class ClassicFragment : Fragment() {
                                     songArtist,
                                     songPrice,
                                     previewURL,
-                                    songGenreName
+                                    songGenreName,
+                                    pictureLink
                                 )
                                 mSongViewModel.addSong(song)
                             }

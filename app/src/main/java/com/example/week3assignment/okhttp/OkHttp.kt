@@ -29,6 +29,7 @@ object OkHttp {
     var artistName = ""
     var trackPrice = 0.0
     var previewUrl = ""
+    var primaryGenreName = ""
 
 
     fun requestURL(urlLink: String) {
@@ -67,6 +68,9 @@ object OkHttp {
                                 previewUrl = jsonArray.getJSONObject(i).getString("previewUrl")
                                 Log.d(TAG, "$i $previewUrl")
                             }
+                            if (jsonArray.getJSONObject(i).has("primaryGenreName")){
+                                primaryGenreName = jsonArray.getJSONObject(i).getString("primaryGenreName")
+                            }
                             insertDataToDatabase()
                         }
 
@@ -84,7 +88,8 @@ object OkHttp {
                 trackName,
                 artistName,
                 trackPrice,
-                previewUrl
+                previewUrl,
+                primaryGenreName
             )
 
             mSongViewModel.addSong(song)

@@ -22,4 +22,12 @@ interface SongDao {
     @Query("SELECT * FROM Song_List ORDER BY id ASC")
     fun readAllData(): LiveData<List<SongData>>
 
+    @Query("SELECT * FROM Song_List WHERE SongGenre = 'Rock' ORDER BY id ASC")
+    fun readRock(): LiveData<List<SongData>>
+
+    @Query("SELECT * FROM Song_List WHERE SongGenre = 'Classic' ORDER BY id ASC")
+    fun readClassic(): LiveData<List<SongData>>
+
+    @Query("SELECT * FROM Song_List WHERE SongGenre = 'Pop' ORDER BY id ASC")
+    fun readPop(): LiveData<List<SongData>>
 }

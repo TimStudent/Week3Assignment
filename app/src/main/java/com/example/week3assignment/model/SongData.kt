@@ -10,5 +10,6 @@ data class SongData(
     @ColumnInfo(name = "Song")        val trackName: String,
     @ColumnInfo(name = "Song Artist") val artistName: String,
     @ColumnInfo(name = "Song Price")  val trackPrice: Double,
-    @ColumnInfo(name = "Song Preview")val songPreview: String
+    @ColumnInfo(name = "Song Preview")val songPreview: String,
+    @ColumnInfo(name = "SongGenre")  val songGenre: String
 )

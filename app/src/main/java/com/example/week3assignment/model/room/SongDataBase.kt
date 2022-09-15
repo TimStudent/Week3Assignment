@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.week3assignment.model.SongData
 
-@Database(entities = [SongData::class], version = 3, exportSchema = false)
+@Database(entities = [SongData::class], version = 4, exportSchema = false)
 abstract class SongDataBase: RoomDatabase() {
 
     abstract fun songDao(): SongDao

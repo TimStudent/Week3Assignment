@@ -11,13 +11,17 @@ import kotlinx.coroutines.launch
 
 
 class SongViewModel (application: Application): AndroidViewModel(application){
-    val readAllData: LiveData<List<SongData>>
+    val readRock: LiveData<List<SongData>>
+    val readClassic: LiveData<List<SongData>>
+    val readPop: LiveData<List<SongData>>
     private val repository: SongDataRepo
 
     init {
         val songDao = SongDataBase.getDatabase(application).songDao()
         repository = SongDataRepo(songDao)
-        readAllData = repository.readAllData
+        readRock = repository.readRock
+        readClassic = repository.readClassic
+        readPop = repository.readPop
     }
 
     fun addSong(song:SongData){

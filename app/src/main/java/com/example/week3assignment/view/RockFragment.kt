@@ -38,7 +38,7 @@ class RockFragment : Fragment() {
     private var songArtist = "One Direction"
     private var songPrice = 1.29
     private var previewURL = "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/ce/32/81/ce32816e-b9e8-e9a8-94bf-40e4f99e3596/mzaf_2990346819158497013.plus.aac.p.m4a"
-
+    private var songGenreName = "Rock"
 
     //
     private var url = ""
@@ -55,7 +55,7 @@ class RockFragment : Fragment() {
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         mSongViewModel = ViewModelProvider(this)[SongViewModel::class.java]
-        mSongViewModel.readAllData.observe(viewLifecycleOwner, Observer { song -> adapter.update(song)})
+        mSongViewModel.readRock.observe(viewLifecycleOwner, Observer { song -> adapter.update(song)})
 
 
         ////
@@ -100,7 +100,8 @@ class RockFragment : Fragment() {
                                     songName,
                                     songArtist,
                                     songPrice,
-                                    previewURL
+                                    previewURL,
+                                    songGenreName
                                 )
                                 mSongViewModel.addSong(song)
                             }

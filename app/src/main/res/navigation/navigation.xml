@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/Rock_Fragment">
+    <fragment
+        android:id="@+id/Rock_Fragment"
+        android:name="com.example.week3assignment.view.RockFragment"
+        android:label="Main Menu"
+        tools:layout="@layout/fragment_rock">
+    </fragment>
+    <fragment
+        android:id="@+id/Classic_Fragment"
+        android:name="com.example.week3assignment.view.ClassicFragment"
+        android:label="Music Player"
+        tools:layout="@layout/fragment_classic">
+    </fragment>
+    <fragment
+        android:id="@+id/Pop_Fragment"
+        android:name="com.example.week3assignment.view.DatabaseFragment"
+        android:label="Music Database"
+        tools:layout="@layout/fragment_pop"
+        >
+
+    </fragment>
+</navigation>

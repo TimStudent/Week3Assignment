@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/Rock_Fragment"
+        android:title="@string/rock"
+        android:icon="@drawable/ic_launcher_background"
+        />
+    <item
+        android:id="@+id/Classic_Fragment"
+        android:title="@string/classic"
+        android:icon="@drawable/ic_launcher_background"/>
+    <item
+        android:id="@+id/Pop_Fragment"
+        android:title="@string/pop"
+        android:icon="@drawable/ic_launcher_background" />
+<!--    <item-->
+<!--        android:id="@+id/Test_Item2"-->
+<!--        android:title="Test"-->
+<!--        android:icon="@drawable/ic_launcher_background"/>-->
+<!--    <item-->
+<!--        android:id="@+id/Test_Item3"-->
+<!--        android:title="Test"-->
+<!--        android:icon="@drawable/ic_launcher_background"/>-->
+</menu>

@@ -121,9 +121,6 @@ class RockFragment : Fragment() {
             }
         })
 
-        binding.musicPlayerBtn.setOnClickListener{
-
-        }
         return binding.root
     }
 }
